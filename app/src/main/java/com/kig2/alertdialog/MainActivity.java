@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
                 builder.setIcon(R.mipmap.ic_launcher);
                 builder.setCancelable(false);
                 // Singe Choice , multiple Choice
+                String[]  arrAnimals = {"Mèo","Chó","Voi","Gà","Khỉ","Heo"};
+                builder.setSingleChoiceItems()
                 builder.setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
