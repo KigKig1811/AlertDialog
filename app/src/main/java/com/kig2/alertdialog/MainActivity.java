@@ -29,12 +29,17 @@ public class MainActivity extends AppCompatActivity {
                 Context context;
                 AlertDialog.Builder builder= new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Bạn có thông báo mới!!!");
-                builder.setMessage("Phiên bản đã có bản cập nhật mới!!!");
+              //  builder.setMessage("Phiên bản đã có bản cập nhật mới!!!");
                 builder.setIcon(R.mipmap.ic_launcher);
                 builder.setCancelable(false);
                 // Singe Choice , multiple Choice
-                String[]  arrAnimals = {"Mèo","Chó","Voi","Gà","Khỉ","Heo"};
-                builder.setSingleChoiceItems()
+                final String[]  arrAnimals = {"Mèo","Chó","Voi","Gà","Khỉ","Heo"};
+                builder.setSingleChoiceItems(arrAnimals, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position) {
+                        Toast.makeText(getApplicationContext(), arrAnimals[position], Toast.LENGTH_SHORT).show();
+                    }
+                });
                 builder.setPositiveButton("Ok!", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
